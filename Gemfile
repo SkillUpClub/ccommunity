@@ -34,6 +34,7 @@ group :development do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'faker'
   gem 'binding_of_caller'
+  gem "letter_opener"
 end
 
 
