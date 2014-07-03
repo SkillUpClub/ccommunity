@@ -8,12 +8,22 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
+    
+  end
+
+  protected
+
+  def configure_permitted_parameters
     # Only add some parameters
     devise_parameter_sanitizer.for(:accept_invitation).concat [:first_name, :last_name, :phone]
     # Override accepted parameters
     devise_parameter_sanitizer.for(:accept_invitation) do |u|
       u.permit(:first_name, :last_name, :phone, :password, :password_confirmation,
                :invitation_token)
+
     end
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
   end
 end
