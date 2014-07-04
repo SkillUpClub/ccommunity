@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
   devise :invitable, 
              :database_authenticatable, 
-             :registerable,
+             #:registerable,
              :recoverable, 
              :rememberable, 
              :trackable,
