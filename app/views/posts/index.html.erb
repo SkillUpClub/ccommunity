@@ -33,7 +33,7 @@
   <h2><%= link_to post.title, post %></h2>
   <div class="post-content">
     <%= post.content.html_safe %>
-    <%= post.user %>
+    <%= post.user.username || "Автор не указан" %>
   </div>
 </div>
 
