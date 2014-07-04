@@ -10,7 +10,10 @@
 <%= render 'layouts/header' %>
 
 <div class="container">
-  <%= yield %>
+<div class="col-md-9 col-lg-9 debug">
+  <%= yield %>  
+</div>
+<%= render 'layouts/sidebar' %>
 </div>
 
 </body>
