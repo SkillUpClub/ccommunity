@@ -11,8 +11,7 @@
 #
 
 class Post < ActiveRecord::Base
-  validates :title, :url, :content, presence: true, length: { minimum: 3 }
-  validates :url, uniqueness: true
+
   belongs_to :category
   belongs_to :user
 end
