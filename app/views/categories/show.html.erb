@@ -1,18 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @category.title %>
+    <h1><%= @category.title %></h1>
 </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @category.url %>
-</p>
-
-<%= @caterory.posts.each do |post| %>
+<% @category.posts.each do |post| %>
 <p><%= link_to post.title, post %></p>
 <% end %>
 
 <%= link_to 'Править', edit_category_path(@category) %> |
-<%= link_to 'Удалить', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Удалить', @category, method: :delete, data: { confirm: 'Are you sure?' } %>

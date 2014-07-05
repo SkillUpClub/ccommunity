@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label "Выберите категорию" %>
-    <%= f.select :category_id, Category.all.collect{|u| [u.title, u.id]}%>
+    <%= f.select :category_id, @post_category%>
   </div>
   <div class="actions">
     <%= f.submit %>
