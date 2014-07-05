@@ -10,5 +10,9 @@
   <%= @category.url %>
 </p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= @caterory.posts.each do |post| %>
+<p><%= link_to post.title, post %></p>
+<% end %>
+
+<%= link_to 'Править', edit_category_path(@category) %> |
+<%= link_to 'Удалить', category, method: :delete, data: { confirm: 'Are you sure?' } %>

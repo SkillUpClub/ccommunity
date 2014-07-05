@@ -1,19 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  <h1><%= @post.title %></h1>
 </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @post.url %>
-</p>
-
-<p>
-  <strong>Content:</strong>
+<div class="post-content single">
   <%= @post.content %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= @post.category.title || "Категория не выбрана" %>
+
+
+<%= link_to 'Править', edit_post_path(@post) %> |
+<%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Are you sure?' } %>

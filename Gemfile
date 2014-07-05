@@ -35,7 +35,6 @@ group :development do
   gem 'faker'
   gem 'binding_of_caller'
   gem "letter_opener"
-  gem 'ngrok'
 end
 
 
