@@ -82,9 +82,19 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { :host => 'skillup.club' }
-  config.action_mailer.delivery_method = :sendmail
-  config.action_mailer.sendmail_settings = { :arguments => "-i" } #Чтобы письма отправлялись без ключа -t
-  #который удаляет нафиг все адреса из тела письма вместо того, чтобы отправлять по ним.
+  # config.action_mailer.delivery_method = :sendmail
+  # config.action_mailer.sendmail_settings = { :arguments => "-i" } #Чтобы письма отправлялись без ключа -t
+  # #который удаляет нафиг все адреса из тела письма вместо того, чтобы отправлять по ним.
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address:              'smtp.yandex.ru',
+  port:                 465,
+  domain:               'skillup.club',
+  user_name:            'inviter',
+  password:             'iinviteyou',
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+
 
 
 
