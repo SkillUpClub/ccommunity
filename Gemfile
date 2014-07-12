@@ -38,7 +38,7 @@ group :development do
 end
 
 
-# group :production do
-#   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
-#   gem 'unicorn'
-# end
+group :production do
+  gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+  gem 'unicorn'
+end

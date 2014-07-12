@@ -4,5 +4,6 @@
     <% end %>
 
 <br>
-
-<%= link_to 'New Category', new_category_path %>
+<% if current_user %>
+<%= link_to 'Новая категория', new_category_path %>
+<% end %>  

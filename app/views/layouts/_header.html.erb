@@ -6,16 +6,16 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                </ul>
                 <div class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
                 <% if user_signed_in? %>
                   <li><%= link_to 'Новая запись', new_post_path %></li>
                   <li><%= link_to 'Настройки', edit_user_registration_path %></li>
                   <li><%= link_to 'Выход', destroy_user_session_path, :method=>'delete' %></li>
                 <% else %>
-                  <li><small><%= link_to 'Вход', new_user_session_path %></small></li>
+                  <li><%= link_to 'Вход', new_user_session_path %></li>
                 <% end %>
+                </ul>
                 </div>
             </div>
             <!-- /.navbar-collapse -->
