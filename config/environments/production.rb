@@ -83,6 +83,9 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'skillup.club' }
   config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.sendmail_settings = { :arguments => "-i" } #Чтобы письма отправлялись без ключа -t
+  #который удаляет нафиг все адреса из тела письма вместо того, чтобы отправлять по ним.
+
 
 
 end
