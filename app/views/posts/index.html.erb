@@ -1,14 +1,14 @@
 <% @posts.each do |post| %>
 <div class="post">
   <h2><%= link_to post.title, post %></h2>
+  <p class="lead">Автор: <%= post.user.username %></p>
+  <span class="glyphicon glyphicon-time"></span> Опубликовано: <%= post.created_at %></p>
+  <hr>
+
   <div class="post-content">
     <%= post.content.html_safe %>
-    <%= post.user.username || "Автор не указан" %>
   </div>
 </div>
-
 <% end %>
-
 <% if current_user %>
-  <%= link_to 'Новая запись', new_post_path %>
 <% end %>  

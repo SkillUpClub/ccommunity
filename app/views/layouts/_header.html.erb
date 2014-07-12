@@ -1,25 +1,24 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <%= link_to 'Главная', root_path, class: 'navbar-brand' %>
-    </div>
+<nav class="navbar navbar-inverse navbar-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <%= link_to 'SkillUp.club', root_path, class: "navbar-brand" %>
+            </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-      </ul>
-
-      <div class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-        <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-        <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
-      <% else %>
-        <li><small><%= link_to 'Sign in', new_user_session_path %></small></li>
-      <% end %>
-      </div>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+                <div class="nav navbar-nav navbar-right">
+                <% if user_signed_in? %>
+                  <li><%= link_to 'Новая запись', new_post_path %></li>
+                  <li><%= link_to 'Настройки', edit_user_registration_path %></li>
+                  <li><%= link_to 'Выход', destroy_user_session_path, :method=>'delete' %></li>
+                <% else %>
+                  <li><small><%= link_to 'Вход', new_user_session_path %></small></li>
+                <% end %>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>

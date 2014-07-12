@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @post_category = Category.all.collect{|u| [u.title, u.id]}
   end
 
   # GET /posts/1/edit
