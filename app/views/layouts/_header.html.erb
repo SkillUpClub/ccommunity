@@ -10,8 +10,13 @@
                 <ul class="nav navbar-nav">
                 <% if user_signed_in? %>
                   <li><%= link_to 'Новая запись', new_post_path %></li>
+                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Профиль<b class="caret"></b></a>
+                  <ul class="dropdown-menu" role="menu">
                   <li><%= link_to 'Настройки', edit_user_registration_path %></li>
+                  <li class="divider"></li>
                   <li><%= link_to 'Выход', destroy_user_session_path, :method=>'delete' %></li>
+                  </ul>
+                  </li>
                 <% else %>
                   <li><%= link_to 'Вход', new_user_session_path %></li>
                 <% end %>
