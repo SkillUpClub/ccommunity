@@ -8,5 +8,7 @@
 <p><%= link_to post.title, post %></p>
 <% end %>
 
-<%= link_to 'Править', edit_category_path(@category) %> |
-<%= link_to 'Удалить', @category, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if current_user %>
+  <%= link_to 'Править', edit_category_path(@category) %> |
+  <%= link_to 'Удалить', @category, method: :delete, data: { confirm: 'Are you sure?' } %>  
+<% end %>  

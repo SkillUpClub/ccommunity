@@ -5,11 +5,12 @@
 </p>
 
 <div class="post-content single">
-  <%= @post.content %>
+  <%= @post.content.html_safe %>
 </div>
 
 <%= @post.category.title || "Категория не выбрана" %>
 
-
-<%= link_to 'Править', edit_post_path(@post) %> |
-<%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if current_user %>
+  <%= link_to 'Править', edit_post_path(@post) %> |
+  <%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Уверены?' } %>  
+<% end %>  
