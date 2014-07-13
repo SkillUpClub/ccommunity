@@ -3,8 +3,8 @@
 <p>
   <h1><%= @post.title %></h1>
 </p>
-<p class="lead">Автор: <%= post.user.username %></p>
-<p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= post.created_at %></p>
+<p class="lead">Автор: <%= @post.user.username %></p>
+<p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= @post.created_at %></p>
 <hr>
 
 <div class="post-content single">
