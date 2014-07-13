@@ -1,8 +1,9 @@
+<% provide(:title, "Главная") %>
 <% @posts.each do |post| %>
 <div class="post">
   <h2><%= link_to post.title, post %></h2>
   <p class="lead">Автор: <%= link_to post.user.username, post.user %></p>
-  <span class="glyphicon glyphicon-time"></span> Опубликовано: <%= post.created_at %></p>
+  <span class="glyphicon glyphicon-time"></span> Опубликовано: <%= created_date(post) %></p>
   <hr>
 
   <div class="post-content">
