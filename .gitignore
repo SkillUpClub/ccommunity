@@ -15,4 +15,7 @@
 /log/*.log
 /tmp
 
+
 ccommunity
+Gemfile
+Gemfile.lock
