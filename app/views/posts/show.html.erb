@@ -5,7 +5,7 @@
   <h1><%= @post.title %></h1>
 </p>
 <p class="lead">Автор: <%= @post.user.username %></p>
-<p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= @post.created_at.strftime("%d %B %Y") %></p>
+<p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= created_date(@post) %></p>
 <hr>
 
 <div class="post-content single">
