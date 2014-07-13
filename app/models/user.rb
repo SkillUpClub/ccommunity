@@ -39,6 +39,8 @@ class User < ActiveRecord::Base
              :authentication_keys => [:login] 
              #:validatable
   has_many :posts
+  extend FriendlyId
+  friendly_id :username
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
