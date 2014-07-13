@@ -87,11 +87,11 @@ Rails.application.configure do
   # #который удаляет нафиг все адреса из тела письма вместо того, чтобы отправлять по ним.
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
-  address:              'smtp.yandex.ru',
-  port:                 465,
+  address:              'smtp.mandrillapp.com',
+  port:                 587,
   domain:               'skillup.club',
-  user_name:            'inviter',
-  password:             'iinviteyou',
+  user_name:            'frey@list.ru',
+  password:             '_4Qmea0WZM3rB7QKQJrLaQ',
   authentication:       'plain',
   enable_starttls_auto: true  }
 
