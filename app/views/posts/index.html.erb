@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
 <div class="post">
   <h2><%= link_to post.title, post %></h2>
-  <p class="lead">Автор: <%= post.user.username %></p>
+  <p class="lead">Автор: <%= link_to post.user.username, post.user %></p>
   <span class="glyphicon glyphicon-time"></span> Опубликовано: <%= post.created_at %></p>
   <hr>
 

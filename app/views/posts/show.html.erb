@@ -3,6 +3,9 @@
 <p>
   <h1><%= @post.title %></h1>
 </p>
+<p class="lead">Автор: <%= post.user.username %></p>
+<p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= post.created_at %></p>
+<hr>
 
 <div class="post-content single">
   <%= @post.content.html_safe %>
@@ -11,6 +14,7 @@
 <%= @post.category.title || "Категория не выбрана" %>
 
 <% if current_user %>
+<hr>
   <%= link_to 'Править', edit_post_path(@post) %> |
   <%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Уверены?' } %>  
-<% end %>  
+<% end %>
