@@ -9,6 +9,7 @@
 <% end %>
 
 <% if current_user %>
+<hr>
   <%= link_to 'Править', edit_category_path(@category) %> |
   <%= link_to 'Удалить', @category, method: :delete, data: { confirm: 'Are you sure?' } %>  
 <% end %>  

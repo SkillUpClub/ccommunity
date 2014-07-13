@@ -1,1 +1,6 @@
-<h3><%= @user.username %></h3>
+<h3>Профиль <%= @user.username %></h3>
+<h4>Список постов:</h4>
+<% @user.posts.each do |post| %>
+  <%= link_to post.title, post %>
+  <br>
+  <% end %>
