@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -16,6 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comments = Comment.new
   end
 
   # GET /posts/new
@@ -81,4 +83,9 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :url, :content, :category_id)
     end
+
+    def correct_user
+      @post = current_user.posts.find_by(url: params[:id])
+      redirect_to root_url if @post.nil?
+    end    
 end

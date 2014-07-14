@@ -14,8 +14,15 @@
 
 <%= @post.category.title || "Категория не выбрана" %>
 
-<% if current_user %>
+<% if current_user?(@post.user) %>
 <hr>
   <%= link_to 'Править', edit_post_path(@post) %> |
   <%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Уверены?' } %>  
 <% end %>
+
+
+<hr>
+<%= render 'shared/comment_form' %>
+<hr>
+
+<%= render 'shared/comment_list' %>

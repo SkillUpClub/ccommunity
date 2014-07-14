@@ -1,0 +1,14 @@
+<h4>Комментарии (<%= @post.comments.size %>)</h4>
+
+<ul class="comment-list">
+<% @post.comments.each do |comment| %>
+<li>
+<p><%= comment.user.username %></p>
+<p> <%= created_date(comment) %></p>
+<p><%= comment.content %></p>
+<% if current_user?(comment.user) %>
+<%= link_to 'Удалить', [@post, comment], method: :delete, data: { confirm: 'Вы уверенны?' } %>
+<% end %>
+<% end %>
+</li>
+</ul>
