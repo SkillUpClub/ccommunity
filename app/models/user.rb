@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
              :authentication_keys => [:login] 
              #:validatable
   has_many :posts
+  has_many :comments
   extend FriendlyId
   friendly_id :username
 

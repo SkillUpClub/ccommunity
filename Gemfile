@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.0'
-gem 'sqlite3'
-#gem 'pg'
+gem 'pg'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'friendly_id'
 
@@ -17,8 +16,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'tzinfo-data'
-#gem 'therubyracer'
+gem 'tzinfo-data', platforms: :mingw
+gem 'therubyracer', platforms: :ruby
 gem 'jbuilder', '~> 2.0'
 gem 'will_paginate', '~> 3.0'
 gem 'carrierwave'
@@ -42,5 +41,5 @@ end
 
 group :production do
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
-  #gem 'unicorn'
+  gem 'unicorn'
 end
