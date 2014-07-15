@@ -5,15 +5,13 @@
 
 <hr>
 <h4>Список постов:</h4><br>
-<ul class="list-unstyled">
+<table class="table">
 <% @user.posts.each do |post| %>
-<li>
-  <p>Заголовок: <%= link_to post.title, post %> </p>
-  <p>Категория: <%= link_to post.category.title, post.category %></p>
-  <p>Дата: <%= created_date(post) %></p>
-</li>  
+  <td><%= link_to post.title, post %></td>
+  <td width=20%><%= link_to post.category.title, post.category %></td>
+  <td width=20%><%= created_date(post) %></td>
+<% end %>
+</table>
 <hr>
-  
-  <% end %>
 </ul>
 </div>
