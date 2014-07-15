@@ -18,4 +18,14 @@ class Post < ActiveRecord::Base
   has_many :comments
   extend FriendlyId
   friendly_id :url
+  default_scope -> { order('created_at DESC') }
+
+
+  def next
+    Post.where("id > ?", id).order("id ASC").last
+  end
+
+  def prev
+    Post.where("id < ?", id).order("id DESC").first
+  end  
 end

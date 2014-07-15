@@ -24,11 +24,11 @@ class CommentsController < ApplicationController
 	end
 
 	def correct_user
-    @comment = current_user.comments.find_by(id: params[:id])
-    redirect_to root_url if @comment.nil?
-  end
+		@comment = current_user.comments.find_by(id: params[:id])
+		redirect_to root_url if @comment.nil?
+	end
 
-  def set_post
-  	@post = Post.friendly.find(params[:post_id])
-  end
+	def set_post
+		@post = Post.friendly.find(params[:post_id])
+	end
 end

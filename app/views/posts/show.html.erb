@@ -1,26 +1,34 @@
 <% provide(:title, @post.title) %>
-<p id="notice"><%= notice %></p>
 
-<p>
-  <h1><%= @post.title %></h1>
-</p>
-<p class="lead">Автор: <%= @post.user.username %></p>
-<p><span class="glyphicon glyphicon-time"></span> Опубликовано: <%= created_date(@post) %></p>
-<hr>
+<div class="post beauty clearfix">
+  <h2><%= @post.title %></h2>
 
-<div class="post-content single">
-  <%= @post.content.html_safe %>
+  <div class="post-content">
+    <%= @post.content.html_safe %>
+  </div>
+  <div class="post-bottom">
+     <ul class="post-bottom-left">
+       <li><%= link_to @post.user.username, @post.user, class: "post-user" %></li>
+       <li><%= link_to @post.category.title, @post.category, class: "post-category" %></li>
+       <li class="post-date"><%= created_date(@post) %></li>
+       <% unless @post.comments.empty? %>
+       <li><%= link_to @post.comments.size, @post, class: "post-comment" %></li>
+       <% end %>    
+     </ul>
+  <% if current_user?(@post.user) %>     
+     <div class="post-bottom-right">
+      <%= link_to 'Править', edit_post_path(@post) %> |
+      <%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Уверены?' } %> 
+     </div>
+  <% end %>     
+  </div>
 </div>
-
-<%= @post.category.title || "Категория не выбрана" %>
-
-<% if current_user?(@post.user) %>
-<hr>
-  <%= link_to 'Править', edit_post_path(@post) %> |
-  <%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Уверены?' } %>  
-<% end %>
-
-
+<div class="post-nav clearfix">
+  <%= link_to "← "+@post.prev.title, @post.prev, class: "post-nav-left" %>
+  <% unless @post.next.nil? %>
+  <%= link_to @post.next.title+" →", @post.next, class: "post-nav-right" %>
+  <% end %>
+</div>
 <hr>
 <%= render 'shared/comment_form' %>
 <hr>

@@ -1,0 +1,107 @@
+/* color variables */
+$red: #5d9cec;
+$redhover: #4b89dc;
+$darkgrey: #434a54;
+$darkgreyhover: #393f48;
+
+.profiler-results{
+  display:none;
+
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.beauty{
+  background: white;
+  border-radius: 4px;
+  border-bottom:3px solid #e3e4e8;
+}
+
+.post{
+  position:relative;
+  margin-bottom:30px;
+  padding:10px 20px 20px 20px;
+  color:black;
+  h2{
+    margin:10px 0 20px 0;
+    a{
+      color: $darkgrey;
+    }
+  }
+  .post-date{
+    color: $darkgrey;
+    font-style:italic;
+    padding-left:20px;
+    background: url('clock-img.png') no-repeat 0 1px;
+  }
+  .post-bottom{
+    margin:20px 0 0 0;
+    a{
+     font-style:italic;
+  }    
+  .post-bottom-left{
+    margin-bottom:0;
+    float:left;
+    list-style: none;
+    padding-left:0;
+    li{
+      display: inline-block;
+      margin-right:10px;
+    }
+    a{
+     color:$darkgrey;
+     &:hover{
+       color:$darkgreyhover;
+      }
+    }
+    }
+    .post-user{
+      padding-left:22px;
+      background: url('user-img.png') no-repeat 0 1px;
+    }
+    .post-comment{
+      padding-left:25px;
+      background: url('comment-img.png') no-repeat 0 2px;
+    }
+    .post-category{
+      padding-left:20px;
+      background: url('category-img.png') no-repeat 0 2px;
+    }
+  }
+  .post-bottom-right{
+    float:right;
+  }
+    .read-more{
+      color:$red;
+      font-weight:bold;
+    }
+}
+
+#post_content{
+  width:702px;
+}
+
+.login-form{
+  padding:10px 20px 20px 20px;
+}
+.padding{
+  padding:10px 20px 20px 20px;
+}
+
+.form-inputs{
+  width:300px;
+}
+
+.post-nav{
+  a{
+    font-size:1.3em;
+  }
+  .post-nav-left{
+    float:left;
+  }
+  .post-nav-right{
+    float:right;
+  }
+}
