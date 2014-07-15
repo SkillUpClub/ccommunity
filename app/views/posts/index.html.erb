@@ -1,13 +1,23 @@
 <% provide(:title, "Главная") %>
 <% @posts.each do |post| %>
-<div class="post">
+<div class="post beauty clearfix">
   <h2><%= link_to post.title, post %></h2>
-  <p class="lead">Автор: <%= link_to post.user.username, post.user %></p>
-  <span class="glyphicon glyphicon-time"></span> Опубликовано: <%= created_date(post) %></p>
-  <hr>
 
   <div class="post-content">
-    <%= post.content.html_safe %>
+    <%= truncate post.content, length: 400, separator: ' ', escape: false  %>
+  </div>
+  <div class="post-bottom">
+     <ul class="post-bottom-left">
+       <li><%= link_to post.user.username, post.user, class: "post-user" %></li>
+       <li><%= link_to post.category.title, post.category, class: "post-category" %></li>
+       <li class="post-date"><%= created_date(post) %></li>
+       <% unless post.comments.empty? %>
+       <li><%= link_to post.comments.size, post, class: "post-comment" %></li>
+       <% end %>    
+     </ul>
+     <div class="post-bottom-right">
+       <%= link_to "Читать полностью", post, class: "read-more" %>
+     </div>
   </div>
 </div>
 <% end %>

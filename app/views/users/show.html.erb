@@ -1,6 +1,19 @@
-<h3>Профиль <%= @user.username %></h3>
-<h4>Список постов:</h4>
+<div class="beauty padding clearfix">
+<h2>Профиль пользователя</h2>
+
+<h3><%= gravatar_for(@user) %> <%= @user.username %></h3>
+
+<hr>
+<h4>Список постов:</h4><br>
+<ul class="list-unstyled">
 <% @user.posts.each do |post| %>
-  <%= link_to post.title, post %>
-  <br>
+<li>
+  <p>Заголовок: <%= link_to post.title, post %> </p>
+  <p>Категория: <%= link_to post.category.title, post.category %></p>
+  <p>Дата: <%= created_date(post) %></p>
+</li>  
+<hr>
+  
   <% end %>
+</ul>
+</div>

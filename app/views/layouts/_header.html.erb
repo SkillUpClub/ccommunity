@@ -1,29 +1,38 @@
-<nav class="navbar navbar-inverse navbar-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-            <%= link_to 'SkillUp<span style="color: #6E7E6B;">.club</span>'.html_safe, root_path, class: "navbar-brand" %>
-            </div>
+<nav class="navbar navbar-default" role="navigation">
+ <!--  <div class="container-fluid"> -->
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <div class="nav navbar-nav navbar-right">
-                <ul class="nav navbar-nav">
-                <% if user_signed_in? %>
-                  <li><%= link_to 'Новая запись', new_post_path %></li>
-                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Профиль<b class="caret"></b></a>
-                  <ul class="dropdown-menu" role="menu">
-                  <li><%= link_to 'Настройки', edit_user_registration_path %></li>
-                  <li class="divider"></li>
-                  <li><%= link_to 'Выход', destroy_user_session_path, :method=>'delete' %></li>
-                  </ul>
-                  </li>
-                <% else %>
-                  <li><%= link_to 'Вход', new_user_session_path %></li>
-                <% end %>
-                </ul>
-                </div>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Главная", root_path %></li>
+        <li><a href="#">Плейсхолдер</a></li>
+        <li><a href="#">Плейсхолдер</a></li>
+        <li><a href="#">Плейсхолдер</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <% unless user_signed_in? %>
+        <li><%= link_to 'Вход', new_user_session_path %></li>
+      <% else %>
+        <li><%= link_to 'Новая запись', new_post_path %></li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Профиль<b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'Моя страница', user_path(current_user) %></li>
+            <li><%= link_to 'Настройки', edit_user_registration_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Выход', destroy_user_session_path, :method =>'delete' %></li>
+          </ul>
+        </li>        
+      <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  <!-- /.container-fluid </div> -->
+</nav>    
