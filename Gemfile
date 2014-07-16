@@ -23,6 +23,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'slim' # препроцессор для HTML
+gem 'high_voltage'
 
 group :development do
   gem "better_errors"

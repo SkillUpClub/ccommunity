@@ -13,7 +13,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Главная", root_path %></li>
+        <li><%= link_to "SkillUp.club", root_path %></li>
+        <li><%= link_to 'О сообществе', page_path('about') %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <% unless user_signed_in? %>
