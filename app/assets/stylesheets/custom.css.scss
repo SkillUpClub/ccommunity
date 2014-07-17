@@ -105,3 +105,10 @@ a:hover{
     float:right;
   }
 }
+
+#error_explanation{
+  color:red;
+  ul{
+    list-style: none;
+  }
+}
