@@ -15,10 +15,9 @@
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
     <% end %>
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-12">
       <%= yield %>
     </div>
-    <%= render partial: 'layouts/sidebar' %>
     </div>
     <hr>
     <%= render partial: 'layouts/footer' %>
