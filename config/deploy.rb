@@ -31,7 +31,7 @@ end
 after "deploy:update_code", :copy_env_prod
 task :copy_env_prod, roles => :app do
   env_prod_config = "#{shared_path}/production.rb"
-  run "cp #{secrets_config} #{release_path}/config/environments/production.rb"
+  run "cp #{env_prod_config} #{release_path}/config/environments/production.rb"
 end
 
 # В rails 3 по умолчанию включена функция assets pipelining,

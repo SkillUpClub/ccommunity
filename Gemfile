@@ -11,6 +11,7 @@ gem 'devise_invitable', '~> 1.3.4'
 
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'fancybox2-rails', '~> 0.2.8'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'sass-rails', '~> 4.0.3'
