@@ -35,6 +35,7 @@ class PostsController < ApplicationController
   def create
     user = current_user
     @post = user.posts.create(post_params)
+    @post_category = Category.all.collect{|u| [u.title, u.id]}    
     #@post = Post.new(post_params)
 
     respond_to do |format|

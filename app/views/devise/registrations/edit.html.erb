@@ -1,7 +1,7 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: user_registration_path, html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <div class="form-inputs">
     <%= f.input :username, required: true, autofocus: true %>

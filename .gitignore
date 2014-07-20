@@ -19,3 +19,5 @@
 ccommunity
 Gemfile
 Gemfile.lock
+/.idea
+/config/environments/production.rb
