@@ -21,3 +21,4 @@ Gemfile
 Gemfile.lock
 /.idea
 /config/environments/production.rb
+/config/database.yml
