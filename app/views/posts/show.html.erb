@@ -24,12 +24,8 @@
   </div>
 </div>
 <div class="post-nav clearfix">
-<% if @post.next || @post.next %>
-  <%= link_to "← #{@post.prev.title}", @post.prev, class: "post-nav-left" %>
-  <% unless @post.next.nil? %>
-  <%= try link_to "#{@post.next.title} →", @post.next, class: "post-nav-right" %>
-  <% end %>
-<% end %>  
+<%= link_to("← #{@post.prev.title}", @post.prev, class: "post-nav-left") if @post.prev.present? %>
+<%= link_to("#{@post.next.title} →", @post.next, class: "post-nav-right") if @post.next.present? %>
 </div>
 <hr>
 <%= render 'shared/comment_form' %>
