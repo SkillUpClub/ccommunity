@@ -16,13 +16,13 @@
 </div>
 <div class="col-lg-6">
   <% if @user.github %>
-    <p><%= link_to (image_tag('octocat.png', height: '16')) + @user.github, "https://github.com/#{@user.github}" %></p>
+    <p><%= link_to (image_tag('octocat.png', height: '16')) + @user.github, "https://github.com/#{@user.github}", target: "_blank" %></p>
   <% end %>  
   <% if @user.twitter  %>
-    <p><%= link_to (image_tag('twitter.png', height: '16')) + @user.twitter, "https://twitter.com/#{@user.twitter}" %></p>
+    <p><%= link_to (image_tag('twitter.png', height: '16')) + @user.twitter, "https://twitter.com/#{@user.twitter}", target: "_blank" %></p>
   <% end %>  
   <% if @user.site %>
-    <p><%= link_to @user.site, "http://#{@user.site}" %></p>
+    <p><%= link_to @user.site, "http://#{@user.site}", target: "_blank" %></p>
   <% end %>  
 </div>
 <hr>
