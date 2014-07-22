@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
   has_many :comments
   extend FriendlyId
   friendly_id :username
+  validates :twitter, :github, uniqueness: true
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
