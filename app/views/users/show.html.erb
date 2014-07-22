@@ -4,14 +4,27 @@
 <h3><%= gravatar_for(@user) %> <%= @user.username %></h3>
 
 <hr>
-<h4>Список постов:</h4><br>
-<table class="table">
-<% @user.posts.each do |post| %>
-  <td><%= link_to post.title, post %></td>
-  <td width=20%><%= link_to post.category.title, post.category %></td>
-  <td width=20%><%= created_date(post) %></td>
-<% end %>
-</table>
+<div class="col-lg-6">
+  <h4>Список постов:</h4><br>
+  <table class="table">
+  <% @user.posts.each do |post| %>
+    <td><%= link_to post.title, post %></td>
+    <td width=20%><%= link_to post.category.title, post.category %></td>
+    <td width=20%><%= created_date(post) %></td>
+  <% end %>
+  </table> 
+</div>
+<div class="col-lg-6">
+  <% if @user.github %>
+    <p><%= link_to @user.github, "https://github.com/#{@user.github}" %></p>
+  <% end %>  
+  <% if @user.twitter  %>
+    <p><%= link_to @user.twitter, "https://twitter.com/#{@user.twitter}" %></p>
+  <% end %>  
+  <% if @user.site %>
+    <p><%= link_to @user.site, "http://#{@user.site}" %></p>
+  <% end %>  
+</div>
 <hr>
 </ul>
 </div>

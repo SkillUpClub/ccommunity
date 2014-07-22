@@ -13,5 +13,5 @@ class UsersController < ApplicationController
 
   def set_user
       @user = User.friendly.find(params[:id])
-    end
+  end
 end
