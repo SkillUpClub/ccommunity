@@ -20,7 +20,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'tzinfo-data', platforms: :mingw
 gem 'therubyracer', platforms: :ruby
 gem 'jbuilder', '~> 2.0'
-gem 'will_paginate', '~> 3.0'
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'slim' # препроцессор для HTML
