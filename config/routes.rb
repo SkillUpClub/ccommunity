@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :categories
   resources :posts do
     resources :comments
+    member do
+      put "like", to: "posts#like"
+      put "dislike", to: "posts#dislike"
+    end
   end
 
   root 'posts#index'

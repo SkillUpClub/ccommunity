@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like]
   before_action :correct_user,   only: [:edit, :update, :destroy]
-
+  before_filter :check_cd, only: [:create]
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.page params[:page]
     
     respond_to do |format|
       format.html
@@ -72,6 +72,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def like
+    @post.liked_by current_user
+    respond_to do |respond|
+      respond.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -87,5 +94,16 @@ class PostsController < ApplicationController
     def correct_user
       @post = current_user.posts.find_by(url: params[:id])
       redirect_to root_url if @post.nil?
+    end
+
+    def check_cd
+        last_post = current_user.posts.first.created_at
+        remaining_time = view_context.distance_of_time_in_words(1.minute.ago, last_post)
+      if last_post < 1.minute.ago
+        return true
+      else
+        flash[:danger] = "Вы отправляете посты слишком быстро, попробуйте через #{remaining_time}"
+        redirect_to(:back)
+      end
     end    
 end

@@ -13,14 +13,23 @@
        <li class="post-date"><%= created_date(@post) %></li>
        <% unless @post.comments.empty? %>
        <li><%= link_to @post.comments.size, @post, class: "post-comment" %></li>
-       <% end %>    
+       <% end %>
+       <li><%= link_to "Мне нравится", like_post_path(@post), method: :put, remote: true %>
+        <span id="likes-count-<%= @post.id %>">
+        (<%= @post.get_likes.size %>)
+        </span>
+      </li> 
      </ul>
-  <% if current_user?(@post.user) %>     
-     <div class="post-bottom-right">
-      <%= link_to 'Править', edit_post_path(@post) %> |
-      <%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Уверены?' } %> 
-     </div>
-  <% end %>     
+     
+
+
+    <% if current_user?(@post.user) %>     
+      <div class="post-bottom-right">    
+        <%= link_to 'Править', edit_post_path(@post) %> |
+        <%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Уверены?' } %> 
+      </div>
+    <% end %>     
+
   </div>
 </div>
 <div class="post-nav clearfix">
