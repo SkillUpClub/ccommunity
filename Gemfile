@@ -26,6 +26,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'slim' # препроцессор для HTML
 gem 'high_voltage'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development do
   gem "better_errors"

@@ -20,6 +20,7 @@ class Post < ActiveRecord::Base
   friendly_id :url
   default_scope -> { order('created_at DESC') }
   paginates_per 5
+  acts_as_votable
 
   def next
     Post.where("id > ?", id).order("id ASC").last

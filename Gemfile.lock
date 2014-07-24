@@ -39,6 +39,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts_as_votable (0.10.0)
     addressable (2.3.6)
     annotate (2.6.5)
       activerecord (>= 2.3.0)
@@ -234,6 +235,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  acts_as_votable (~> 0.10.0)
   annotate (>= 2.6.0)
   better_errors
   binding_of_caller
