@@ -16,14 +16,14 @@
 </div>
 <div class="col-lg-6">
   <% if @user.github %>
-    <p><i class="fa fa-github-alt"></i> <%= link_to @user.github, "https://github.com/#{@user.github}", target: "_blank" %></p>
+    <p><%= link_to icon('github-alt black') + " #{@user.github}", "https://github.com/#{@user.github}", target: "_blank" %></p>
 
   <% end %>  
   <% if @user.twitter  %>
-    <p><i class="fa fa-twitter"></i> <%= link_to @user.twitter, "https://twitter.com/#{@user.twitter}", target: "_blank" %></p>
+    <p><%= link_to icon('twitter black') + " #{@user.twitter}", "https://twitter.com/#{@user.twitter}", target: "_blank" %></p>
   <% end %>  
   <% if @user.site %>
-    <p><i class="fa fa-anchor"></i> <%= link_to @user.site, "http://#{@user.site}", target: "_blank" %></p>
+    <p><%= link_to icon('anchor black') + " #{@user.site}", "http://#{@user.site}", target: "_blank" %></p>
   <% end %>  
 </div>
 <hr>
