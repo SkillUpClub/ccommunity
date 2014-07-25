@@ -27,7 +27,6 @@ gem 'mini_magick'
 gem 'slim' # препроцессор для HTML
 gem 'high_voltage'
 gem 'acts_as_votable', '~> 0.10.0'
-gem 'font-awesome-sass'
 
 
 group :development do
