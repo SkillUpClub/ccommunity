@@ -17,7 +17,7 @@
 <div class="col-lg-6">
   <% if @user.github %>
     <p><%= link_to (image_tag('octocat.png', height: '16')) + @user.github, "https://github.com/#{@user.github}", target: "_blank" %></p>
-    <%= icon('fa-git') %>
+    <i class="fa fa-git"></i>
   <% end %>  
   <% if @user.twitter  %>
     <p><%= link_to (image_tag('twitter.png', height: '16')) + @user.twitter, "https://twitter.com/#{@user.twitter}", target: "_blank" %></p>
