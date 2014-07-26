@@ -96,14 +96,17 @@ class PostsController < ApplicationController
       redirect_to root_url if @post.nil?
     end
 
-    def check_cd
-        last_post = current_user.posts.first.created_at
-        remaining_time = view_context.distance_of_time_in_words(1.minute.ago, last_post)
-      if last_post < 1.minute.ago
-        return true
-      else
-        flash[:danger] = "Вы отправляете посты слишком быстро, попробуйте через #{remaining_time}"
-        redirect_to(:back)
+    # Needs to be refactored
+    def check_cd 
+      unless current_user.posts.empty?
+          last_post = current_user.posts.first.created_at
+          remaining_time = view_context.distance_of_time_in_words(1.minute.ago, last_post)
+        if last_post < 1.minute.ago
+          return true
+        else
+          flash[:danger] = "Вы отправляете посты слишком быстро, попробуйте через #{remaining_time}"
+          redirect_to(:back)
+        end
       end
     end    
 end
