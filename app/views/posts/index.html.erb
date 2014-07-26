@@ -2,10 +2,9 @@
 <% @posts.each do |post| %>
 <div class="post beauty clearfix">
   <h2><%= link_to post.title, post %></h2>
-<% if post.members_only %>
-  <% unless current_user %>
-    <p>Чтение доступно только зарегистрированным участникам сообщества</p>
-  <% else %>
+      
+  <% if post.members_only %>
+    <% if current_user %>
   <div class="post-content">
     <%= truncate post.content, length: 600, separator: ' ', escape: false  %>
   </div>
@@ -22,8 +21,31 @@
        <%= link_to "Читать полностью", post, class: "read-more" %>
      </div>
   </div>
-  <% end %>
-<% end %>  
+    <% else %>
+    <p>Текст публикации доступен только зарегистрированным участникам сообщества.</p>
+    <% end %>  
+
+  <% #Пиздец как это уродливо, переделать асап %>
+
+    <% else %>
+  <div class="post-content">
+    <%= truncate post.content, length: 600, separator: ' ', escape: false  %>
+  </div>
+  <div class="post-bottom">
+     <ul class="post-bottom-left">
+       <li><%= link_to post.user.username, post.user, class: "post-user" %></li>
+       <li><%= link_to post.category.title, post.category, class: "post-category" %></li>
+       <li class="post-date"><%= created_date(post) %></li>
+       <% unless post.comments.empty? %>
+       <li><%= link_to post.comments.size, post, class: "post-comment" %></li>
+       <% end %>    
+     </ul>
+     <div class="post-bottom-right">
+       <%= link_to "Читать полностью", post, class: "read-more" %>
+     </div>
+  </div>
+  <% end %>  
+
 </div>
 <% end %>
 
