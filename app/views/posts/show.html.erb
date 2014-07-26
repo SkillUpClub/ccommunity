@@ -1,5 +1,8 @@
 <% provide(:title, @post.title) %>
-
+<% if @post.members_only %>
+<% unless current_user %>
+<p>Чтение доступно только зарегистрированным участникам сообщества</p>
+<% else %>
 <div class="post beauty clearfix">
   <h2><%= @post.title %></h2>
 
@@ -41,3 +44,5 @@
 <hr>
 
 <%= render 'shared/comment_list' %>
+<% end %>
+<% end %>  

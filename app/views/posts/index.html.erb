@@ -2,7 +2,10 @@
 <% @posts.each do |post| %>
 <div class="post beauty clearfix">
   <h2><%= link_to post.title, post %></h2>
-
+<% if post.members_only %>
+  <% unless current_user %>
+    <p>Чтение доступно только зарегистрированным участникам сообщества</p>
+  <% else %>
   <div class="post-content">
     <%= truncate post.content, length: 600, separator: ' ', escape: false  %>
   </div>
@@ -19,6 +22,8 @@
        <%= link_to "Читать полностью", post, class: "read-more" %>
      </div>
   </div>
+  <% end %>
+<% end %>  
 </div>
 <% end %>
 

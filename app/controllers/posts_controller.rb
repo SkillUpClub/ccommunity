@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @post_category = Category.all.collect{|u| [u.title, u.id]}
+    @post_category = Category.all.collect{|c| [c.title, c.id]}
   end
 
   # GET /posts/1/edit
@@ -88,7 +88,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :url, :content, :category_id)
+      params.require(:post).permit(:title, :url, :content, :category_id, :members_only)
     end
 
     def correct_user
