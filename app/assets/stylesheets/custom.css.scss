@@ -112,3 +112,16 @@ a:hover{
     list-style: none;
   }
 }
+
+.links{
+  p{
+    margin:10px 0 0 0;
+    font-weight: bold;
+  }
+  .approve{
+    font-weight: bold;
+    font-size:16px;
+    padding-top:10px;
+    display: inline-block;
+  }
+}

@@ -13,6 +13,7 @@ class Category < ActiveRecord::Base
   validates :title, :url, presence: true, length: { minimum: 3 }
   validates :url, uniqueness: true
   has_many :posts
+  has_many :links
   extend FriendlyId
   friendly_id :url
 end

@@ -1,0 +1,23 @@
+<div class="beauty post links">
+  <p>Заголовок:</p>
+  <%= @link.title %>
+  <p>Описание:</p>
+  <%= @link.description %>
+  <p>Ссылка:</p>
+  <%= @link.address %>
+  <p>Категория:</p>
+  <%= link_to @link.category.title, @link.category %>
+  <p>Автор:</p>
+  <% if @link.user %>
+  <%= link_to @link.user.username, @link.user %>
+  <% else %>
+  Гость
+  <% end %>
+
+    <% if current_user?(@link.user) && signed_in? %>     
+      <div class="post-bottom-right">    
+        <%= link_to 'Править', edit_link_path(@link) %> |
+        <%= link_to 'Удалить', @link, method: :delete, data: { confirm: 'Уверены?' } %> 
+      </div>
+    <% end %>     
+</div>

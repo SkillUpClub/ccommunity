@@ -1,0 +1,5 @@
+<div class="beauty post">
+<%= link_to "Ожидающие модерации (#{Link.not_approved.size})", links_moderate_path if signed_in? && Link.not_approved.size > 0 %>
+<h1>Полезные ссылки</h1>
+<%= render 'link_list' %>
+</div>

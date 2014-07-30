@@ -1,0 +1,23 @@
+<ul class="links list-unstyled">
+<% @links.each do |link| %>
+  <li>
+  <p>Заголовок:</p>
+  <%= link_to link.title, link %>
+  <p>Описание:</p>
+  <%= link.description %>
+  <p>Ссылка:</p>
+  <%= link.address %>
+  <p>Категория:</p>
+  <%= link_to link.category.title, link.category %>  
+  <p>Автор:</p>
+  <% if link.user %>
+  <%= link_to link.user.username, link.user %>
+  <% else %>
+  Гость
+  <% end %>
+  </li>
+   <%= link_to "Перейти", link, class: "approve" %> 
+   <%= link_to "Одобрить", approve_link_path(link), class: "approve", method: :put unless link.approved? %>
+  <hr>
+<% end %>
+</ul>

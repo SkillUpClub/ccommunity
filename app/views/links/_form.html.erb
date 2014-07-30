@@ -1,0 +1,8 @@
+<%= simple_form_for @link do |f| %>
+<%= f.input :title %>
+<%= f.input :address %>
+<%= f.input :description %>
+<%= f.label "Категория" %>
+<%= f.select :category_id, @categories %> <br>
+<%= f.submit %>
+<% end %>
