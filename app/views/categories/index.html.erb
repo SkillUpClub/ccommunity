@@ -1,9 +1,12 @@
+<div class="post beauty">
 <h1>Категории</h1>
+<ul class="categories">
     <% @categories.each do |category| %>
-       <%= link_to category.title, category %>
+     <li><%= link_to category.title, category %></li>  
     <% end %>
-
+</ul>
 <br>
 <% if current_user %>
 <%= link_to 'Новая категория', new_category_path %>
 <% end %>  
+</div>

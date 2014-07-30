@@ -1,15 +1,20 @@
 <p id="notice"><%= notice %></p>
-
+<div class="post beauty">
 <p>
-    <h1><%= @category.title %></h1>
+    <h1>Категория <%= @category.title %></h1>
 </p>
-
+<h3>Список постов:</h3>
 <% @category.posts.each do |post| %>
 <p><%= link_to post.title, post %></p>
 <% end %>
-
+<hr>
+<h3>Список полезных ссылок:</h3>
+<% @category.links.each do |link| %>
+<p><%= link_to link.title, link %></p>
+<% end %>
 <% if current_user %>
 <hr>
   <%= link_to 'Править', edit_category_path(@category) %> |
   <%= link_to 'Удалить', @category, method: :delete, data: { confirm: 'Are you sure?' } %>  
 <% end %>  
+</div>
