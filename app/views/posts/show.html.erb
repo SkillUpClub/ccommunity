@@ -14,9 +14,6 @@
        <li><%= link_to @post.user.username, @post.user, class: "post-user" %></li>
        <li><%= link_to @post.category.title, @post.category, class: "post-category" %></li>
        <li class="post-date"><%= created_date(@post) %></li>
-       <% unless @post.comments.empty? %>
-       <li><%= link_to @post.comments.size, @post, class: "post-comment" %></li>
-       <% end %>
        <li><%= link_to "Мне нравится", like_post_path(@post), method: :put, remote: true %>
         <span id="likes-count-<%= @post.id %>">
         (<%= @post.get_likes.size %>)
@@ -58,9 +55,6 @@
        <li><%= link_to @post.user.username, @post.user, class: "post-user" %></li>
        <li><%= link_to @post.category.title, @post.category, class: "post-category" %></li>
        <li class="post-date"><%= created_date(@post) %></li>
-       <% unless @post.comments.empty? %>
-       <li><%= link_to @post.comments.size, @post, class: "post-comment" %></li>
-       <% end %>
        <li><%= link_to "Мне нравится", like_post_path(@post), method: :put, remote: true %>
         <span id="likes-count-<%= @post.id %>">
         (<%= @post.get_likes.size %>)
