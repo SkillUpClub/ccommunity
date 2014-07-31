@@ -15,7 +15,6 @@ class Post < ActiveRecord::Base
   validates :url, uniqueness: true
   belongs_to :category
   belongs_to :user
-  has_many :comments
   extend FriendlyId
   friendly_id :url
   default_scope -> { order('created_at DESC') }

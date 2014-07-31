@@ -40,7 +40,6 @@ class User < ActiveRecord::Base
              #:validatable
   has_many :posts
   has_many :links
-  has_many :comments
   extend FriendlyId
   friendly_id :username
   validates :twitter, :github, uniqueness: true
