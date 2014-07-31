@@ -14,10 +14,11 @@
   Гость
   <% end %>
 
-    <% if current_user?(@link.user) && signed_in? %>     
+    <% if current_user && signed_in? %>     
       <div class="post-bottom-right">    
         <%= link_to 'Править', edit_link_path(@link) %> |
         <%= link_to 'Удалить', @link, method: :delete, data: { confirm: 'Уверены?' } %> 
       </div>
     <% end %>     
 </div>
+<%= render partial: 'shared/comments' %>

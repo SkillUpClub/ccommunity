@@ -84,9 +84,6 @@
 <%= link_to("#{@post.next.title} →", @post.next, class: "post-nav-right") if @post.next.present? %>
 </div>
 <hr>
-<%= render 'shared/comment_form' %>
-<hr>
-
-<%= render 'shared/comment_list' %>
+<%= render partial: 'shared/comments' %><hr>
  
 <% end %>  
