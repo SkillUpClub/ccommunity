@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20140730194848) do
     t.datetime "updated_at"
   end
 
+  create_table "comments", force: true do |t|
+    t.integer  "post_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
   create_table "links", force: true do |t|
     t.string   "address"
     t.text     "description"

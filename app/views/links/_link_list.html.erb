@@ -8,7 +8,11 @@
 </tr>
 <% @links.each do |link| %>
 <tr>
-  <td><%= link_to link.title, link %><small><%= link_to "Одобрить", approve_link_path(link), class: "approve", method: :put unless link.approved? %></small></td>
+  <td><%= link_to link.title, link %>
+    <small>
+    <%= link_to "Одобрить", approve_link_path(link), class: "approve", method: :put unless link.approved? %>
+    <%= link_to "Отклонить", link, class: "approve", method: :delete unless link.approved? %>
+    </small></td>
   <td><%= link.description %></td>
   <td><%= link.address %></td>
   <td><%= link_to link.category.title, link.category %></td>

@@ -1,3 +1,4 @@
+<% if @link.approved? || user_signed_in? %>
 <div class="beauty post links">
   <p>Заголовок:</p>
   <%= @link.title %>
@@ -14,11 +15,17 @@
   Гость
   <% end %>
 
-    <% if current_user %>     
-      <div class="post-bottom-right">    
-        <%= link_to 'Править', edit_link_path(@link) %> |
-        <%= link_to 'Удалить', @link, method: :delete, data: { confirm: 'Уверены?' } %> 
-      </div>
-    <% end %>     
+
+    <% if user_signed_in? && current_user?(@link.user) %>     
+      <%= render 'moderate_links' %>
+    <% elsif user_signed_in? && !@link.user %>     
+      <%= render 'moderate_links' %>
+    <% end %>
 </div>
 <%= render partial: 'shared/comments' %>
+
+<% else %>
+
+<p>Ссылка на модерации.</p>
+ 
+<% end %>

@@ -70,8 +70,13 @@ class LinksController < ApplicationController
   end
 
   def correct_user
-    @link = current_user.links.find_by(id: params[:id])
-    redirect_to root_url if @link.nil?
+    @link = Link.find(params[:id])
+    if @link.user
+      @link_for_delete = current_user.links.find_by(id: params[:id])
+    else
+      return
+    end
+    redirect_to root_url if @link_for_delete.nil?
   end
 
   def set_link
