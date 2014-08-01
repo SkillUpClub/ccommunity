@@ -4,7 +4,7 @@
   <p>Описание:</p>
   <%= @link.description %>
   <p>Ссылка:</p>
-  <%= @link.address %>
+  <a href="<%= @link.address %>"><%= @link.address %></a>
   <p>Категория:</p>
   <%= link_to @link.category.title, @link.category %>
   <p>Автор:</p>
