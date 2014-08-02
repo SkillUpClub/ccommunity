@@ -47,7 +47,7 @@
   <% #Пиздец как это уродливо, переделать асап %>
 
   <% else %>
-    <%= @post.content.html_safe %>
+    <%= markdown @post.content %>
   </div>
   <div class="post-bottom">
      <ul class="post-bottom-left">
