@@ -8,7 +8,6 @@ gem 'friendly_id'
 gem 'devise'
 gem 'devise_invitable', '~> 1.3.4'
 
-
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
@@ -27,6 +26,7 @@ gem 'mini_magick'
 gem 'slim' # препроцессор для HTML
 gem 'high_voltage'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'kramdown' # продвинутый маркдаун
 
 group :development do
   gem "better_errors"
@@ -41,7 +41,6 @@ group :development do
   gem 'binding_of_caller'
   gem "letter_opener"
 end
-
 
 group :production do
   gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'

@@ -7,7 +7,7 @@
   <div class="post-content">
 <% if @post.members_only %>
   <% if current_user %>
-    <%= @post.content.html_safe %>
+    <%= markdown @post.content %>
   </div>
   <div class="post-bottom">
      <ul class="post-bottom-left">
@@ -37,10 +37,9 @@
 <%= link_to("#{@post.next.title} →", @post.next, class: "post-nav-right") if @post.next.present? %>
 </div>
 <hr>
-<%= render 'shared/comment_form' %>
+<%= render 'shared/comments' %>
 <hr>
 
-<%= render 'shared/comment_list' %>
 <% else %>
 <p>Текст публикации доступен только зарегистрированным участникам сообщества.</p>
   <% end %>  

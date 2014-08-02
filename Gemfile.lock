@@ -109,6 +109,7 @@ GEM
       kaminari (>= 0.13.0)
       rails
     kgio (2.9.2)
+    kramdown (1.4.1)
     launchy (2.4.2)
       addressable (~> 2.3)
     letter_opener (1.2.0)
@@ -255,6 +256,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   kaminari-bootstrap (~> 3.0.1)
+  kramdown
   letter_opener
   mini_magick
   pg
