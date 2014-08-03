@@ -16,3 +16,6 @@
 //= require fancybox
 //= require_tree .
 //= require bootstrap
+$(document).ready(function() {
+  $("a.fancybox").fancybox();
+});
