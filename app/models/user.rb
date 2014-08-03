@@ -30,16 +30,17 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   attr_accessor :login
-  devise :invitable, 
-             :database_authenticatable, 
-             #:registerable,
-             :recoverable, 
-             :rememberable, 
+  devise :invitable,
+             :database_authenticatable,
+             # :registerable,
+             :recoverable,
+             :rememberable,
              :trackable,
-             :authentication_keys => [:login] 
-             #:validatable
+             :authentication_keys => [:login]
+             # :validatable
   has_many :posts
   has_many :links
+  has_many :steps, through: :trails
   extend FriendlyId
   friendly_id :username
   validates :twitter, :github, uniqueness: true

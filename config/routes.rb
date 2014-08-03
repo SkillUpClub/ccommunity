@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :steps
+
+  resources :trails
+
   get 'links/moderate', to: 'links#moderate', :as => 'links_moderate'
   
   devise_for :users # , :controllers => { :registrations => :registrations }
