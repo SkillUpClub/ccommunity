@@ -1,0 +1,9 @@
+div.post-content
+  = markdown truncate post.content, length: 600, separator: ' ', escape: false
+div.post-bottom
+  ul.post-bottom-left
+    li = link_to post.user.username, post.user, class: "post-user"
+    li = link_to post.category.title, post.category, class: "post-category"
+    li.post-date = created_date(post)
+  div.post-bottom-right
+    = link_to "Читать полностью", post, class: "read-more"

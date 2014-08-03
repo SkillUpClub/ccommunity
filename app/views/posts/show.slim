@@ -1,0 +1,16 @@
+- provide(:title, @post.title)
+div.post.beauty.clearfix
+  h2 = @post.title
+  - if !@post.members_only
+    = render 'post_show'
+  - elsif @post.members_only && user_signed_in?
+    = render 'post_show'
+  - else
+      p Текст публикации доступен только зарегистрированным участникам сообщества.
+
+div.post-nav.clearfix
+  = link_to("← #{@post.prev.title}", @post.prev, class: "post-nav-left") if @post.prev.present?
+  = link_to("#{@post.next.title} →", @post.next, class: "post-nav-right") if @post.next.present?
+  
+hr
+= render 'shared/comments'          
