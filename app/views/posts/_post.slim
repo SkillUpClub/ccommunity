@@ -1,5 +1,5 @@
 div.post-content
-  = markdown post.content
+  = markdown truncate post.content, length: 600, separator: ' ', escape: false
 div.post-bottom
   ul.post-bottom-left
     li = link_to post.user.username, post.user, class: "post-user"
