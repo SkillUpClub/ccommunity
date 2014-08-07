@@ -42,7 +42,8 @@ class User < ActiveRecord::Base
   has_many :links
   extend FriendlyId
   friendly_id :username
-  validates :twitter, :github, uniqueness: true
+  # validates :twitter, :github, uniqueness: true
+  # валидация вызывает ошибку при регистрации, видимо потому что по-умолчанию стоит nil. Нужно как-то поправить
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
