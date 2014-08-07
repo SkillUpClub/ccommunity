@@ -24,6 +24,7 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'slim' # препроцессор для HTML
+gem 'slim-rails'
 gem 'high_voltage'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'kramdown' # продвинутый маркдаун

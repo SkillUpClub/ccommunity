@@ -1,0 +1,12 @@
+- provide(:title, "Главная")
+- @posts.each do |post|
+  div.post.beauty.clearfix
+    h2 = link_to post.title, post
+    - if !post.members_only
+      = render post
+    - elsif post.members_only && user_signed_in?
+      = render post
+    - else
+        p Текст публикации доступен только зарегистрированным участникам сообщества.
+
+= paginate @posts
