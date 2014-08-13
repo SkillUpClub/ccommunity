@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :current_announcement
 
   protected
 
@@ -22,5 +23,11 @@ class ApplicationController < ActionController::Base
       :password, :password_confirmation, :current_password, :github, :twitter, :site) }
 
   end
+
+  # private
+  def current_announcement
+    @current_announcement ||= Announcement.where(active: true).order(created_at: :desc).first
+  end
+
 
 end

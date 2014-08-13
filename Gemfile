@@ -10,6 +10,8 @@ gem 'devise_invitable', '~> 1.3.4'
 
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
 gem 'fancybox2-rails', '~> 0.2.8'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.1.1'

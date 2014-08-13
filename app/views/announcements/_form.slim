@@ -1,0 +1,10 @@
+= form_for([@user, @announcement]) do |f|
+  = render 'shared/error_messages', object: f.object
+  div.field
+    = f.label "Содержимое записи"
+    br = f.text_area :content, cols: 120, rows: 5
+  div.field
+    = f.label :active, "активно?"
+    = f.check_box :active
+  div.actions
+    = f.submit

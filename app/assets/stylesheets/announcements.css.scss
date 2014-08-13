@@ -1,0 +1,17 @@
+.alert-announcement-closed {
+  width: 100%;
+  z-index: 99;
+  height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.alert-announcement-opened {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  height: auto;
+  overflow: hidden;
+  display: inline-block;
+}

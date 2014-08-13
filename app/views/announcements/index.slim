@@ -1,0 +1,21 @@
+-provide(:title, "Оповещения")
+-if current_user == @user
+  =link_to 'Создать оповещение', new_user_announcement_path, class: 'btn btn-default btn-sm'
+div class='row'
+  div class='col-md-offset-2'
+    table class='table'
+      -@announcements.each do |a|
+          -if a.active
+            tr class='success'
+              td
+                -if @user == current_user
+                  =link_to a.content, edit_user_announcement_path(@user.id, a.id)
+                -else
+                  =link_to a.content, user_announcement_path(@user.id, a.id)
+          -else
+            tr class='danger'
+              td
+                -if @user == current_user
+                  =link_to a.content, edit_user_announcement_path(@user.id, a.id)
+                -else
+                  =link_to a.content, user_announcement_path(@user.id, a.id)

@@ -2,7 +2,7 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= auto_discovery_link_tag :atom, "/posts.atom" %>
   <%= csrf_meta_tags %>
@@ -12,17 +12,22 @@
 <body>
 
 <div class="container">
-<%= render 'layouts/header' %>
+  <%= render 'layouts/header' %>
   <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
-    <% end %>
+      <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+  <% end %>
+  <% if @current_announcement %>
+      <div id="announcement" class="alert alert-info alert-announcement-closed">
+        <%= @current_announcement.content %>
+      </div>
+  <% end %>
   <div class="row">
     <div class="col-lg-12">
       <%= yield %>
     </div>
-    </div>
-    <hr>
-    <%= render partial: 'layouts/footer' %>
+  </div>
+  <hr>
+  <%= render partial: 'layouts/footer' %>
 </div>
 <!-- /.container -->
 </body>

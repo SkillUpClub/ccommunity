@@ -2,7 +2,7 @@
 <h2>Профиль пользователя</h2>
 
 <h3><%= gravatar_for(@user) %> <%= @user.username %></h3>
-
+<%= link_to 'Оповещения', user_announcements_path(@user.id) %>
 <hr>
 <div class="col-lg-6">
   <h4>Список постов:</h4><br>
