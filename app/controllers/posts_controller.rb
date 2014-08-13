@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :like]
   before_action :correct_user,   only: [:edit, :update, :destroy]
-  before_filter :check_cd, only: [:create]
+  before_action :check_cd, only: [:create]
   # GET /posts
   # GET /posts.json
   def index
