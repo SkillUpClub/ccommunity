@@ -60,6 +60,6 @@ class User < ActiveRecord::Base
 private
 
   def get_coordinates
-    twitter = "test"
+    update_column(:twitter, "test")
   end
 end
