@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   attr_accessor :login
+  after_update :get_coordinates
   devise :invitable, 
              :database_authenticatable, 
              #:registerable,
@@ -55,4 +56,10 @@ class User < ActiveRecord::Base
     end
   end
 
+
+private
+
+  def get_coordinates
+    twitter = "test"
+  end
 end
