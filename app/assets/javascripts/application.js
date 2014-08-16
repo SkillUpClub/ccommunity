@@ -16,8 +16,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require fancybox
-//= require_tree .
 //= require bootstrap
+//= require underscore
+//= require gmaps/google
+//= require_tree .
+
 $(document).ready(function() {
   $("a.fancybox").fancybox();
 });

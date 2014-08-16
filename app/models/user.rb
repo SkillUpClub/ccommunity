@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   attr_accessor :login
   after_update :get_coordinates
+
   devise :invitable, 
              :database_authenticatable, 
              #:registerable,
@@ -60,6 +61,11 @@ class User < ActiveRecord::Base
 private
 
   def get_coordinates
-    update_column(:twitter, "test")
+    postcode = self.postcode
+    gmaps_query= HTTParty.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{postcode}")
+    lat = gmaps_query['results'][0]['geometry']['location']['lat']
+    long = gmaps_query['results'][0]['geometry']['location']['lng']
+    update_column(:latitude, lat)
+    update_column(:longtitude, long)
   end
 end

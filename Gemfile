@@ -30,6 +30,10 @@ gem 'slim-rails'
 gem 'high_voltage'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'kramdown' # продвинутый маркдаун
+gem 'httparty'
+gem 'gmaps4rails'
+gem 'geocoder'
+
 
 group :development do
   gem "better_errors"

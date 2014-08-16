@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longtitude
+    end
   end
 
   def show
@@ -14,4 +18,9 @@ class UsersController < ApplicationController
       @user = User.friendly.find(params[:id])
   end
 
+  def gmaps4rails_title
+    @json = User.all.to_gmaps4rails do |user, marker|
+      marker.json "\"id\": #{user.id}, \"foo\": #{user.username}"
+    end
+  end
 end
