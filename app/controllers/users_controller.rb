@@ -19,8 +19,6 @@ class UsersController < ApplicationController
   end
 
   def gmaps4rails_title
-    @json = User.all.to_gmaps4rails do |user, marker|
-      marker.json "\"id\": #{user.id}, \"foo\": #{user.username}"
-    end
+    
   end
 end

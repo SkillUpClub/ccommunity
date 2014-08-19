@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   attr_accessor :login
-  after_update :get_coordinates
+  # after_update :get_coordinates
 
   devise :invitable, 
              :database_authenticatable, 
@@ -60,12 +60,12 @@ class User < ActiveRecord::Base
 
 private
 
-  def get_coordinates
-    postcode = self.postcode
-    gmaps_query= HTTParty.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{postcode}")
-    lat = gmaps_query['results'][0]['geometry']['location']['lat']
-    long = gmaps_query['results'][0]['geometry']['location']['lng']
-    update_column(:latitude, lat)
-    update_column(:longtitude, long)
-  end
+  # def get_coordinates
+  #   postcode = self.postcode
+  #   gmaps_query= HTTParty.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{postcode}")
+  #   lat = gmaps_query['results'][0]['geometry']['location']['lat']
+  #   long = gmaps_query['results'][0]['geometry']['location']['lng']
+  #   update_column(:latitude, lat)
+  #   update_column(:longtitude, long)
+  # end
 end

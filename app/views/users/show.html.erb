@@ -8,9 +8,11 @@
   <h4>Список постов:</h4><br>
   <table class="table">
   <% @user.posts.each do |post| %>
+  <tr>
     <td><%= link_to post.title, post %></td>
     <td width=20%><%= link_to post.category.title, post.category %></td>
     <td width=20%><%= created_date(post) %></td>
+  </tr>
   <% end %>
   </table> 
 </div>
