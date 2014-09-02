@@ -19,7 +19,12 @@
 //= require bootstrap
 //= require underscore
 //= require gmaps/google
+//= require highlight_js/highlight
+//= require highlight_js/languages/ruby
 //= require_tree .
+
+
+hljs.initHighlightingOnLoad();
 
 $(document).ready(function() {
   $("a.fancybox").fancybox();

@@ -32,13 +32,13 @@ class User < ActiveRecord::Base
   attr_accessor :login
   # after_update :get_coordinates
 
-  devise :invitable, 
-             :database_authenticatable, 
+  devise :invitable,
+             :database_authenticatable,
              #:registerable,
-             :recoverable, 
-             :rememberable, 
+             :recoverable,
+             :rememberable,
              :trackable,
-             :authentication_keys => [:login] 
+             :authentication_keys => [:login]
              #:validatable
   has_many :posts
   has_many :links

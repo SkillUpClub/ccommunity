@@ -33,6 +33,7 @@ gem 'kramdown' # продвинутый маркдаун
 gem 'httparty'
 gem 'gmaps4rails'
 gem 'geocoder'
+gem 'highlight_js-rails'
 
 
 group :development do

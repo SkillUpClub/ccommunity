@@ -93,6 +93,8 @@ GEM
     geocoder (1.2.4)
     gmaps4rails (2.1.2)
     high_voltage (2.2.0)
+    highlight_js-rails (7.1.0)
+      rails (>= 3.1.1)
     highline (1.6.21)
     hike (1.2.3)
     hirb (0.7.2)
@@ -269,6 +271,7 @@ DEPENDENCIES
   geocoder
   gmaps4rails
   high_voltage
+  highlight_js-rails
   hirb
   httparty
   jbuilder (~> 2.0)

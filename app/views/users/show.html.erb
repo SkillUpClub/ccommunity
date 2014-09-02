@@ -14,19 +14,19 @@
     <td width=20%><%= created_date(post) %></td>
   </tr>
   <% end %>
-  </table> 
+  </table>
 </div>
 <div class="col-lg-6">
   <% if @user.github %>
     <p><i class="fa fa-github-alt black"></i> <%= link_to @user.github, "https://github.com/#{@user.github}", target: "_blank" %></p>
 
-  <% end %>  
+  <% end %>
   <% if @user.twitter  %>
     <p><i class="fa fa-twitter black"></i> <%= link_to @user.twitter, "https://twitter.com/#{@user.twitter}", target: "_blank" %></p>
-  <% end %>  
+  <% end %>
   <% if @user.site %>
     <p><i class="fa fa-anchor black"></i> <%= link_to @user.site, "http://#{@user.site}", target: "_blank" %></p>
-  <% end %>  
+  <% end %>
 </div>
 <hr>
 </ul>
