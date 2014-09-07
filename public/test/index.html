@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="IE-fix"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>skillup.club</title>
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/style.css">
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	</head>
+	<body>
+		<!--[if lt IE 7]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+		<div class="all">
+			<header>
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#">Skillup<sup>.club</sup></a>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="collapse">
+							<ul class="nav navbar-nav">
+								<li><a href="#">Полезные ссылки</a></li>
+								<li><a href="#">Категории</a></li>
+								<li class="active"><a href="#">О сообществе</a></li>
+								<li><a href="http://skillup.club/posts.atom">RSS</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<!-- <li><a href="#">Link</a></li> -->
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> le-genda <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#"><i class="icon-file"></i> Профиль</a></li>
+										<li><a href="#"><i class="icon-config"></i> Настройки</a></li>
+										<li class="divider"></li>
+										<li><a href="#"><i class="icon-edit"></i>  Добавить запись</a></li>
+										<li><a href="#"><i class="icon-link"></i>  Предлоджить ссылку</a></li>
+										<li class="divider"></li>
+										<li><a href="#"><i class="icon-exit"></i> Выход</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid-fluid -->
+				</nav>
+				<div class="subline">
+					<div class="container-fluid">
+						<a href="#" class="close" onclick="$(this).parents('.subline').fadeOut(200); return false;" aria-hidden="true"><i class="icon-close"></i></a>
+						Если вдруг понадобится бегущая строка всплывающее уведомление или дополнительное меню, то вот это оно. <a href="#">Можно сделать различных оттенков</a>
+					</div>
+				</div>
+			</header>
+			<section class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-6">
+							<ol class="breadcrumb">
+								<li><a href="#">Главная</a></li>
+								<li class="active">Хлебная крошка</li>
+							</ol><!-- Этот блок выводить только на внутренних страницах -->
+						</div>
+						<div class="col-sm-6">
+							<ol class="filter">
+								<li>Сортировать по:</li>
+								<li><a href="#">дате</a></li>
+								<li class="active asc"><a href="#">популярности</a></li>
+							</ol>
+						</div>
+					</div>
+					<div class="posts isotope js-isotope" data-isotope-options='{"layoutMode": "masonry", "masonry": "{gutter: 0}", "itemSelector": ".item" }' role="main">
+						<div class="item post">
+							<article class="item-inner">
+								<h2><a href="#">Запись аудиоконференции по теме тестирования</a></h2>
+								<div class="post-info">
+									<span class="post-time"><i class="icon-clock"></i> 17.09.14 22:37</span>
+									<span class="post-author"><i class="icon-user"></i> <a href="#">le-genda</a></span>
+									<span class="post-comments"><i class="icon-bubble"></i> <a href="#">27</a></span>
+								</div>
+								<div class="iframe">
+									<iframe width="100%" height="180" src="//www.mixcloud.com/widget/iframe/?feed=http%3A%2F%2Fwww.mixcloud.com%2Fle-genda_%2F%25D1%2582%25D0%25B5%25D1%2581%25D1%2582%25D0%25B8%25D1%2580%25D0%25BE%25D0%25B2%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B5%2F&amp;embed_uuid=18a981ef-6b5f-4228-ae81-92b5ccd64001&amp;replace=0&amp;hide_cover=1&amp;light=1&amp;embed_type=widget_standard&amp;hide_tracklist=1" frameborder="0"></iframe>
+								</div>
+								<p>Тема: Тестирование Rails-приложений</p>
+								<div class="item-footer">
+									<div class="post-tags"><i class="icon-tags"></i> <a href="#">ruby</a>, <a href="#">podcast</a></div>
+								</div>
+								<div class="item-blind"></div>
+							</article>
+						</div>
+						<div class="item post">
+							<article class="item-inner">
+								<h2><a href="#">Отправка почты из Rails-приложения при помощи Mandrill</a></h2>
+								<div class="post-info">
+									<span class="post-time"><i class="icon-clock"></i> 17.09.14 22:37</span>
+									<span class="post-author"><i class="icon-user"></i> <a href="#">le-genda</a></span>
+									<span class="post-comments"><i class="icon-bubble"></i> <a href="#">27</a></span>
+								</div>
+								<p>Итак, вам понадобилось отправлять почту из вашего Rails-приложения. Можно воспользоваться стандартным методом sendmail, или использовать smtp, установив настройки какого-нибудь почтового сервиса (вроде Google или Yandex).</p>
+								<p>Регистрация элементарная: почтовый адрес и пароль. После регистрации вам будет…</p>
+								<div class="item-footer">
+									<div class="post-tags"><i class="icon-tags"></i> <a href="#">programming</a>, <a href="#">ruby</a></div>
+								</div>
+								<div class="item-blind"></div>
+							</article>
+						</div>
+						<div class="item post">
+							<article class="item-inner">
+								<h2><a href="#">Установка kramdown в Rails-приложение</a></h2>
+								<div class="post-info">
+									<span class="post-time"><i class="icon-clock"></i> 17.09.14 22:37</span>
+									<span class="post-author"><i class="icon-user"></i> <a href="#">le-genda</a></span>
+									<span class="post-comments"><i class="icon-bubble"></i> <a href="#">27</a></span>
+								</div>
+								<p>Рано или поздно каждый разработчик приходит к тому, чтобы использовать markdown-разметку. Как минимум &mdash; попробовать, как максимум &mdash; использовать постоянно. Я предлагаю взглянуть на отличный гем, который позволяет встроить в rails-приложение markdown и еще несколько форматов.</p>
+								<p>В первую очередь, обновим Gemfile:</p>
+								<pre><code># config/initializers/kramdown.rb
+gem 'kramdown'
+module ApplicationHelper
+    def markdown(source)
+    ...
+</code></pre>
+								<div class="item-footer">
+									<div class="post-tags"><i class="icon-tags"></i> <a href="#">programming</a>, <a href="#">ruby</a>, <a href="#">podcast</a></div>
+								</div>
+								<div class="item-blind"></div>
+							</article>
+						</div>
+						<div class="item post">
+							<article class="item-inner">
+								<h2><a href="#">Направление развития сообщества</a></h2>
+								<div class="post-info">
+									<span class="post-time"><i class="icon-clock"></i> 17.09.14 22:37</span>
+									<span class="post-author"><i class="icon-user"></i> <a href="#">le-genda</a></span>
+									<span class="post-comments"><i class="icon-bubble"></i> <a href="#">27</a></span>
+								</div>
+								<p>В связи с появлением нескольких весьма интересных идей, публикую здесь опросы, к ним относящиеся.</p>
+								<div class="poll"><script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/8289093.js"></script></div>
+								<p>Один пост &ndash; один опрос.</p>
+								<div class="item-footer">
+									<div class="post-tags"><i class="icon-tags"></i> <a href="#">programming</a>, <a href="#">ruby</a>, <a href="#">podcast</a></div>
+								</div>
+								<div class="item-blind"></div>
+							</article>
+						</div>
+						<div class="item post">
+							<article class="item-inner">
+								<h2><a href="#">Деплой Rails-приложения в production</a></h2>
+								<div class="post-info">
+									<span class="post-time"><i class="icon-clock"></i> 17.09.14 22:37</span>
+									<span class="post-author"><i class="icon-user"></i> <a href="#">le-genda</a></span>
+									<span class="post-comments"><i class="icon-bubble"></i> <a href="#">27</a></span>
+								</div>
+								<p>Для многих начинающих Rails-разработчиков одним из камней преткновения становится размещение написанного ими приложения на сервере. Я предлагаю вам несложное руководство, по окончании которого вы сможете корректно задеплоить ваше Rails-приложение в production.</p>
+								<div class="cover"><img src="images/image.jpg" alt=""></div>
+								<p>В моем примере используется LTS-версия Ubuntu, потому что она поддерживается в течение нескольких лет, в то время как обычные версии ОС такой поддержки не имеют.</p>
+								<p>Использование Ubuntu LTS позволит вам получать обновления безопасности, которые важны для вашего продакшен-сервера (или серверов).</p>
+								<p>Мы установим и настроим VPS для…</p>
+								<div class="item-footer">
+									<div class="post-tags"><i class="icon-tags"></i> <a href="#">programming</a>, <a href="#">ruby</a>, <a href="#">podcast</a></div>
+								</div>
+								<div class="item-blind"></div>
+							</article>
+						</div>
+						<div class="item post">
+							<article class="item-inner">
+								<h2><a href="#">Аутентификация через Twitter, Facebook, ВКонтакте, используя Devise и OmniAuth в&nbsp;Rails&nbsp;4</a></h2>
+								<div class="post-info">
+									<span class="post-time"><i class="icon-clock"></i> 17.09.14 22:37</span>
+									<span class="post-author"><i class="icon-user"></i> <a href="#">le-genda</a></span>
+									<span class="post-comments"><i class="icon-bubble"></i> <a href="#">27</a></span>
+								</div>
+								<p>Существует довольно много OAuth решений, но я хочу поделиться тем, что использую лично, так как оно позволяет грамотно связать несколько провайдеров(twitter, fb и тд) с одним пользователем. Если вы пользуетесь готовыми решениями с интернета, вы обнаружите, что каждый раз, когда пользователь логинится с другого OAuth провайдера, создается новый аккаунт, что приводит в замешательство. Так же некоторые провайдеры не делятся email адресом пользователя, поэтому нам придется добавить дополнительный шаг в регистрацию, подробнее об этом здесь.</p>
+								<div class="item-footer">
+									<div class="post-tags"><i class="icon-tags"></i> <a href="#">programming</a>, <a href="#">ruby</a>, <a href="#">podcast</a></div>
+								</div>
+								<div class="item-blind"></div>
+							</article>
+						</div>
+						<div class="item post">
+							<article class="item-inner">
+								<h2><a href="#">Видеокурс по Ruby и Ruby on Rails</a></h2>
+								<div class="post-info">
+									<span class="post-time"><i class="icon-clock"></i> 17.09.14 22:37</span>
+									<span class="post-author"><i class="icon-user"></i> <a href="#">le-genda</a></span>
+									<span class="post-comments"><i class="icon-bubble"></i> <a href="#">27</a></span>
+								</div>
+								<p>У меня тут есть свеженький видеокурс от Школы Программирования, думаю, может быть полезно, как новичкам, так и не очень.</p>
+								<div class="iframe"><iframe width="100%" height="260" src="//www.youtube-nocookie.com/embed/phaINNGgUnE?list=PLVBFw0Pn9e9L8f0_etdXbwjRG4cpNJ9nT" frameborder="0" allowfullscreen></iframe></div>
+								<p>Описание курса тут: <a href="#">Школа Программирования</a></p>
+								<p>Ссылка на скачивание: <a href="#">cloud.mail.ru</a></p>
+								<p>Пожалуйста, не перевыкладывайте больше нигде в паблике, не хочется никаких проблем.</p>
+								<div class="item-footer">
+									<div class="post-tags"><i class="icon-tags"></i> <a href="#">programming</a>, <a href="#">ruby</a>, <a href="#">podcast</a></div>
+								</div>
+								<div class="item-blind"></div>
+							</article>
+						</div>
+						<div class="item post">
+							<article class="item-inner">
+								<h2><a href="#">Линкота №1</a></h2>
+								<div class="post-info">
+									<span class="post-time"><i class="icon-clock"></i> 17.09.14 22:37</span>
+									<span class="post-author"><i class="icon-user"></i> <a href="#">le-genda</a></span>
+									<span class="post-comments"><i class="icon-bubble"></i> <a href="#">27</a></span>
+								</div>
+								<p>Итак, этой записью я хотел бы открыть традицию еженедельной публикации ссылок на наиболее интересные материалы в мире веб-разработки и Ruby/Rails в большей степени, набравшихся за прошедшую неделю. Эта неделя первая, так что ссылок будет немного, но далее, надеюсь, их будет все же побольше. Начинаем.</p>
+								<p><a href="https://www.omniref.com">https://www.omniref.com</a> – универсальный справочник по документации к языку Ruby. Результат поиска по классу, методу или чему-то еще покажет вам, как это используется и что мы можем получить в результате. Красивый и удобно оформленный поисковик – вещь…</p>
+								<div class="item-footer">
+									<div class="post-tags"><i class="icon-tags"></i> <a href="#">programming</a>, <a href="#">ruby</a>, <a href="#">podcast</a></div>
+								</div>
+								<div class="item-blind"></div>
+							</article>
+						</div>
+						<div class="item post">
+							<article class="item-inner">
+								<h2><a href="#">Линкота №2</a></h2>
+								<div class="post-info">
+									<span class="post-time"><i class="icon-clock"></i> 17.09.14 22:37</span>
+									<span class="post-author"><i class="icon-user"></i> <a href="#">le-genda</a></span>
+									<span class="post-comments"><i class="icon-bubble"></i> <a href="#">27</a></span>
+								</div>
+								<p>Прошла целая неделя и настало время для второго выпуска Линкоты. Нельзя сказать, что количество ссылок в этом выпуске сильно отличается о прошлого, но они, по крайней мере, разные :) Начинаем.</p>
+								<p><a href="http://blog.flatironschool.com/">http://blog.flatironschool.com/</a> – руководство по портированию базы данных из sqlite3 в PostgreSQL. Не смейтесь, такая необходимость реально может возникнуть. Я сам в свое время был вынужден искать подобное руководство, чтобы успешно перенести данные из sqlite в постгрес. Это…</p>
+								<div class="item-footer">
+									<div class="post-tags"><i class="icon-tags"></i> <a href="#">programming</a>, <a href="#">ruby</a>, <a href="#">podcast</a></div>
+								</div>
+								<div class="item-blind"></div>
+							</article>
+						</div>
+					</div>
+					<!-- Нижний див раскомментировать чтобы получить классический пагинатор -->
+					<!-- <div class="text-center">
+						<ul class="pagination">
+							<li><a href="#"><i class="icon-arrow-left3"></i>&ndash;</a></li>
+							<li><span>&#8230;</span></li>
+							<li><a href="#">12</a></li>
+							<li class="active"><a href="#">13</a></li>
+							<li><a href="#">14</a></li>
+							<li><a href="#">15</a></li>
+							<li><span>&#8230;</span></li>
+							<li><a href="#">&ndash;<i class="icon-arrow-right3"></i></a></li>
+						</ul>
+					</div> -->
+
+					<div id="preloader">
+						<div id="preloader_1" class="preloader"></div>
+						<div id="preloader_2" class="preloader"></div>
+						<div id="preloader_3" class="preloader"></div>
+					</div>
+
+					<!-- Закомментирвать, если раскомменирован пагинатор -->
+					<div class="row">
+						<div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+							<a href="#" class="load-more" onclick="$('#preloader').fadeIn(200).delay(5000).fadeOut(200); return false;">Загрузить еще</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="container-fluid">
+				<footer class="footer">
+					<div class="row">
+						<div class="col-sm-6"><p>&copy; Мы стартовали в июле 2014-го<br>Все записи и переводы принадлежат их авторам | <a href="http://skillup.club/posts.atom">RSS</a></p></div>
+						<div class="col-sm-6"><p class="text-right">programming by <a href="#">Frey</a><br>design & frontent by <a href="le-genda.com">le-genda</a></p></div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<!-- копка для прокрутки наверх -->
+		<a href="javascript:void(0);" id="ontop" title="Наверх"><i class="icon-arrow-up3"></i></a>
+		<!-- scripts -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+		<script src="js/highlight.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/isotope.min.js"></script>
+		<script src="js/main.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<!-- ./ scripts -->
+	</body>
+</html>
