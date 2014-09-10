@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :new, :create]
-  before_action :correct_user,   only: [:edit, :update, :destroy]  
+  before_action :correct_user,   only: [:edit, :update, :destroy]
   before_action :set_link, only: [:show, :edit, :update, :destroy, :approve]
 
   def index
@@ -24,7 +24,7 @@ class LinksController < ApplicationController
   end
 
   def edit
-    @categories = Category.all.map{|c| [c.title, c.id]} 
+    @categories = Category.all.map{|c| [c.title, c.id]}
   end
 
   def update
@@ -44,7 +44,7 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
-    @categories = Category.all.map{|c| [c.title, c.id]}    
+    @categories = Category.all.map{|c| [c.title, c.id]}
   end
 
   def create
@@ -81,5 +81,5 @@ class LinksController < ApplicationController
 
   def set_link
     @link = Link.find(params[:id])
-  end  
+  end
 end

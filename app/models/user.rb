@@ -43,6 +43,8 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :links
   has_many :announcements
+  has_and_belongs_to_many :couses
+  has_many :steps
   extend FriendlyId
   friendly_id :username
   # validates :twitter, :github, uniqueness: true

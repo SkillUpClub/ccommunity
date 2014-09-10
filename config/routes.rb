@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :steps
 
-  resources :courses
+  resources :courses do
+    resources :steps
+  end
 
   get 'links/moderate', to: 'links#moderate', :as => 'links_moderate'
-  
+
   devise_for :users # , :controllers => { :registrations => :registrations }
   as :user do
     get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
