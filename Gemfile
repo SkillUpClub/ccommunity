@@ -36,7 +36,7 @@ gem 'geocoder'
 gem 'highlight_js-rails'
 
 
-group :development do
+group :development, :test do
   gem "better_errors"
   gem 'annotate', ">=2.6.0"
   gem 'bullet'
