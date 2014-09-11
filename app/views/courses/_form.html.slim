@@ -12,4 +12,17 @@
   .field
     = f.label :description
     = f.text_area :description
+  = f.fields_for :steps do |builder|
+    fieldset
+      = builder.label :title, "Название шага"
+      br
+      = builder.text_field :title
+      br
+      = builder.label :description, "Описание шага"
+      br
+      = builder.text_field :description
+      br
+      = builder.check_box :_destroy
+      = builder.label :_destroy, "Удалить шаг"
+
   .actions = f.submit 'Save'

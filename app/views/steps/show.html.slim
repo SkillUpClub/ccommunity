@@ -1,5 +1,6 @@
 p#notice = notice
 
+p = link_to "Курс #{@course.title}", @course
 p
   strong Title:
   = @step.title
@@ -7,6 +8,4 @@ p
   strong Description:
   = @step.description
 
-= link_to 'Edit', edit_step_path(@step)
-'|
-= link_to 'Back', steps_path
+= link_to 'Edit', edit_course_step_path(@course, @step)

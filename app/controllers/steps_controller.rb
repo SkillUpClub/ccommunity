@@ -10,11 +10,13 @@ class StepsController < ApplicationController
   # GET /steps/1
   # GET /steps/1.json
   def show
+    @course = Course.find(params[:course_id])
   end
 
   # GET /steps/new
   def new
     @step = Step.new
+    @course = Course.find(params[:course_id])
   end
 
   # GET /steps/1/edit
