@@ -5,7 +5,7 @@ class LinksController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @links = Link.approved.order(sort_column + ' ' + sort_direction).approved
+    @links = Link.approved.order(sorting).approved
   end
 
   def moderate
@@ -90,5 +90,10 @@ class LinksController < ApplicationController
     
   def sort_direction  
     %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"   
-  end   
+  end
+
+  def sorting
+    "#{sort_column} #{sort_direction}"
+  end
+
 end
