@@ -1,10 +1,10 @@
 <table class="table table-condensed">
 <tr>
-  <th>Название</th>
-  <th>Описание</th>
+  <th><%= sortable "title", "Название" %></th>
+  <th><%= sortable "description", "Описание" %></th>
   <th>Ссылка</th>
-  <th>Категория</th>
-  <th>Автор</th>
+  <th><%= sortable "category_id", "Категория" %></th>
+  <th><%= sortable "user_id", "Автор" %></th>
 </tr>
 <% @links.each do |link| %>
 <tr>
