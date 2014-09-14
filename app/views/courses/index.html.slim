@@ -1,14 +1,12 @@
-h1 Listing courses
+h1 Список доступных путей
 
-table
-  tbody
-    - @courses.each do |course|
-      tr
-        td = link_to course.title, course
-        td = course.description
-        td = link_to 'Edit', edit_course_path(course)
-        td = link_to 'Destroy', course, data: {:confirm => 'Are you sure?'}, :method => :delete
-
+- @courses.each do |course|
+  .row
+    .panel.panel-default.course
+      .panel-heading
+        h4.title = link_to course.title, course
+      .panel-body
+        .description = course.description
 br
 
 = link_to 'New Course', new_course_path

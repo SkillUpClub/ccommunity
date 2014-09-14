@@ -1,11 +1,9 @@
-p#notice = notice
-
-p = link_to "Курс #{@course.title}", @course
+h4 = link_to "Курс #{@course.title}", @course
 p
-  strong Title:
+  h5 Шаг:
   = @step.title
 p
-  strong Description:
+  h5 Описание:
   = @step.description
 
 = link_to 'Edit', edit_course_step_path(@course, @step)
