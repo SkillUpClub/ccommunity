@@ -1,8 +1,15 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
-  def take_it
-
+  def take
+    @course = Course.find(params[:id])
+    @new_course = @course.dup
+    @new_course.user_id = current_user.id
+    if @new_course.save
+      redirect_to root_path, notice: "Курс взят!"
+    else
+      redirect_to root_path, notice: "ERROR"
+    end
   end
 
   def index

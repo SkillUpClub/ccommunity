@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-
   resources :courses do
     resources :steps
   end
+  get "courses/:id/take", to: "courses#take", as: "course_take"
 
   get 'links/moderate', to: 'links#moderate', :as => 'links_moderate'
 
