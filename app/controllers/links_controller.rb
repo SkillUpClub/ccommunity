@@ -2,9 +2,10 @@ class LinksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :new, :create]
   before_action :correct_user,   only: [:edit, :update, :destroy]  
   before_action :set_link, only: [:show, :edit, :update, :destroy, :approve]
+  helper_method :sort_column, :sort_direction
 
   def index
-    @links = Link.approved
+    @links = Link.approved.order(sorting).approved
   end
 
   def moderate
@@ -81,5 +82,18 @@ class LinksController < ApplicationController
 
   def set_link
     @link = Link.find(params[:id])
+  end
+
+  def sort_column  
+    Link.column_names.include?(params[:sort]) ? params[:sort] : "title"    
   end  
+    
+  def sort_direction  
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"   
+  end
+
+  def sorting
+    "#{sort_column} #{sort_direction}"
+  end
+
 end
